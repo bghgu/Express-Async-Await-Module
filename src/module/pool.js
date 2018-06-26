@@ -1,4 +1,4 @@
-const pool = require('../config/db_pool.js');
+const pool = require('../../config/db_pool.js');
 
 //DB 통신 모듈화
 //매개변수
