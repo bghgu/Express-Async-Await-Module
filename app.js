@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var helmet = require('helmet');
 
 var config = require('./config/secretKey');
 var hash = require('./config/hashKey');
@@ -15,7 +16,7 @@ var app = express();
 //cors
 const cors = require('cors');
 app.use(cors());
-
+app.use(helmet())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
