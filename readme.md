@@ -1,15 +1,16 @@
 # express 테스트
 
+* cors
+* helmet
+* async await
+* promise-mysql
+* JWT
+* hash
+* sequelize
+
 ## 시작하기
 
-이 프로젝트에서는 아래 같은 **의존성 프로젝트**가 포함되어있습니다. 
-
-```
-helmet
-jsonwebtoken
-promise-mysql
-cors
-```
+* npm install
 
 ## 실행하기
 

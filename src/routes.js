@@ -14,4 +14,8 @@ router.use('/login', login);
 const signup = require('./controller/signup');
 router.use('/signup', signup);
 
+//signup
+const seqyelizeTest = require('./controller/seqyelizeTest');
+router.use('/seq', seqyelizeTest);
+
 module.exports = router;
