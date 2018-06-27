@@ -3,19 +3,15 @@ const express = require('express');
 const router = express.Router();
 
 //test
-const test = require('./controller/test');
+const test = require('./controller/testController');
 router.use('/test', test);
 
 //login
-const login = require('./controller/login');
+const login = require('./controller/loginController');
 router.use('/login', login);
 
 //signup
-const signup = require('./controller/signup');
+const signup = require('./controller/signupController');
 router.use('/signup', signup);
-
-//signup
-const seqyelizeTest = require('./controller/seqyelizeTest');
-router.use('/seq', seqyelizeTest);
 
 module.exports = router;

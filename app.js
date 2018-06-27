@@ -6,24 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 
-var config = require('./config/secretKey');
-var hash = require('./config/hashKey');
+var config = require('./src/config/secretKey');
+var hash = require('./src/config/hashKey');
 
-var routes = require('./src/routes');
+var routes = require('./src/app/routes');
 
 var app = express();
-
-const models = require('./models');
-models.sequelize.sync()
-  .then(() => {
-    console.log('✓ DB connection success.');
-    console.log('  Press CTRL-C to stop\n');
-  })
-  .catch(err => {
-    console.error(err);
-    console.log('✗ DB connection error. Please make sure DB is running.');
-    process.exit();
-  });
 
 //cors
 const cors = require('cors');

@@ -4,13 +4,14 @@ const pool = require('../../config/db_pool.js');
 //매개변수
 //1번째 : query문
 //2번째 : data(json 형식 가능)
+
 module.exports = {
     //인수 1개, 전체 조회
-    FindAll : async (...args) => {
+    execute1 : async (...args) => {
         const query = args[0];
         let result;
         try {
-            var connection = await pool.getConnection();
+            let connection = await pool.getConnection();
             result = await connection.query(query) || null;
         }
         catch(err) {
@@ -22,12 +23,12 @@ module.exports = {
         }
     },
     //인수 2개
-    execute : async (...args) => {
+    execute2 : async (...args) => {
         const query = args[0];
         const data = args[1];
         let result;
         try {
-            var connection = await pool.getConnection();
+            let connection = await pool.getConnection();
             result = await connection.query(query, data) || null;
         }
         catch(err) {
@@ -45,7 +46,7 @@ module.exports = {
         const data2 = args[2];
         let result;
         try {
-            var connection = await pool.getConnection();
+            let connection = await pool.getConnection();
             result = await connection.query(query, [data, data2]) || null;
         }
         catch(err) {
@@ -64,7 +65,7 @@ module.exports = {
         const data3 = args[3];
         let result;
         try {
-            var connection = await pool.getConnection();
+            let connection = await pool.getConnection();
             result = await connection.query(query, [data, data2, data3]) || null;
         }
         catch(err) {
