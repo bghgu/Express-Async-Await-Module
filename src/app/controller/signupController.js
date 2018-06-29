@@ -12,7 +12,7 @@ router.post('/', async(req, res, next) => {
 
     let newUser = signup.new(email, password);
 
-    let inserted = await db.execute(insertNewUser, newUser);
+    let inserted = await db.execute(QUERY, newUser);
     
     if(inserted == undefined) {
         res.status(405).send({
